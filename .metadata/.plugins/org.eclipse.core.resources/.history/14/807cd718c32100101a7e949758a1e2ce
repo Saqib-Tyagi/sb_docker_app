@@ -1,0 +1,40 @@
+package com.java.practises;
+
+interface Engine {
+
+}
+
+class Bike implements Engine {
+
+	public Bike() {
+		System.out.println("Bike is called..");
+	}
+}
+
+class Car implements Engine {
+
+	public Car() {
+		System.out.println("Car is called..");
+	}
+}
+
+public class Demo2 {
+
+	public static Engine getEgine(String str) {
+		if (str != null) {
+			if (str.equals("Car"))
+				return new Car();
+			else if (str.equals("Bike"))
+				return new Bike();
+		}
+		return null;
+	}
+
+	public static void main(String[] args) {
+
+		Engine eng = getEgine("Car");
+		System.out.println(eng);
+
+	}
+
+}
